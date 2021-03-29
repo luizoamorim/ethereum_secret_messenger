@@ -25,6 +25,23 @@ It's a sample code that have two methods:
 - setMessage that storage some string on memory.
 - getMessage that shows the string storaged.
 
+Solidity code - myMessage.sol
+```
+pragma solidity ^0.4.24;
+
+contract Message {
+    string myMessage;
+
+    function setMessage(string x) public {
+        myMessage = x;
+    }
+
+    function getMessage() public view returns (string) {
+        return myMessage;
+    }
+}
+```
+
 ## How to deploy
 We use remix to make the smart contract deploy on ganache.
 With it done we can use this contract in javaScript code accessing it throughout web3.js.
