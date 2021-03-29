@@ -18,21 +18,21 @@ Used to deploy a smart contract in the choosed blockchain network. At this case,
 
 Allow the developer manage and interact with the blockchain network.
 
-## Project explanation
+# Project explanation
 
-# Our smart contract
+## Our smart contract
 It's a sample code that have two methods:
 - setMessage that storage some string on memory.
 - getMessage that shows the string storaged.
 
-# How to deploy
+## How to deploy
 We use remix to make the smart contract deploy on ganache.
 With it done we can use this contract in javaScript code accessing it throughout web3.js.
 
-# Html page
+## Html page
 A page that shows an input and a button to send the message to the blockchain.
 
-# Script
+## Script
 Get the smart contract ABI and contract address.
 Done it, is possible access the methods of smart contracts and use it on the code.
 
