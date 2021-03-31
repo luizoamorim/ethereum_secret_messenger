@@ -28,18 +28,10 @@
 
     <script>
 
-        // Connect a the web3 provider
-        if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-        }
-
-        // Set a default account
-        web3.eth.defaultAccount = web3.eth.accounts[0];
+        var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));                   
 
         // Get the contract address
-        var myMessage = new web3.eth.Contract([
+        var myContract = new web3.eth.Contract([
             {
                 "constant": false,
                 "inputs": [
@@ -68,14 +60,22 @@
                 "stateMutability": "view",
                 "type": "function"
             }
-        ], '0x61AC839A2AC09767983eEdcFcEca25a5eA306a7d');              
+        ],'0x7Fd8541D86870CA37F62b4B55eFcb85Ce61B9d0C');            
 
-        console.log(myMessage);
-
+        console.log(myContract)      
+        
         $("#setMessageButton").click(function () {
-            myMessage.methods.setMessage($("#userInput").val());
-            console.log($("#userInput").val())
+            message = $("#userInput").val()
+            myContract.methods.setMessage(message)
+            .send({from: '0xf20c1a6BfEc7F2D617e6e5e4c027BAF6780d4D98'})
+            .then(result => {
+                console.log(result);
+                myContract.methods.getMessage()
+                    .call()
+                    .then(console.log);        
+            });                        
         });
+        
 
     </script>
 </body>
