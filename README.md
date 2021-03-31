@@ -55,4 +55,4 @@ Done it, is possible access the methods of smart contracts and use it on the cod
 
 # Project result
 
-![image](https://user-images.githubusercontent.com/73957838/112779632-87b26980-901d-11eb-9a93-0de843637d42.png)
+
